@@ -1,5 +1,5 @@
 module.exports =
-    {turn, move, updateBoard, checkIfFlagReached, cloneRobot};
+    {turn, move, updateBoard, checkIfFlagReached, cloneRobot, treeReached};
 
 const SYMBOLS = {
     robot: setReverse('R'),
@@ -49,6 +49,19 @@ function turn(robot, step, turns) {
 }
 
 function move(robot, maxLineIndex, maxColumnIndex, nbOfMoves) {
+    if(robot == 'up' && move == 'oneline-up') {
+        robot = 'up';
+    }
+    else if(robot == 'right' && move == 'oneline-right') {
+        robot.head = 'right';
+    }
+    else if(robot == 'down' && move == 'oneline-down') {
+        robot.head = 'down';
+    }
+    else if(robot == 'left' && move == 'oneline-left') {
+        robot.head = 'left';
+    }
+
     nbOfMoves += 1;
     return nbOfMoves;
 }
@@ -92,3 +105,18 @@ function setReverse(char) {
 function setBright(char) {
     return `\x1b[1m${char}\x1b[0m`;
 }
+
+
+// ex3 test
+
+function treeReached(robot, maxLineIndex, maxColumnIndex, treePosition) {
+    if(robot.position.column === 0 && robot.position.line === 2) {
+        console.log("Oops, you have reached the tree!")
+    }
+    return true;
+}
+
+function robotMoveOut() {
+
+}
+    return

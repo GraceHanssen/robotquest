@@ -160,6 +160,42 @@ test('robot should move 1 step up when head is up', () => {
     //expect(robot.position.line).toBe(3);
 });
 
+test('robot should move 1 step down when head is down', () => {
+    let maxLineIndex = 3; // 4 lines
+    let maxColumnIndex = 3; // 4 columns
+    let nbOfMoveAlreadyDone = 5;
+    let robot = {
+        position: {
+            line: 2,
+            column: 2
+        },
+        head: 'down'
+    };
+
+    let nbOfMove = featuresToTest.move(robot, maxLineIndex, maxColumnIndex, nbOfMoveAlreadyDone);
+    expect(nbOfMove).toBe(6);
+    expect(robot.position.column).toBe(2);
+    //expect(robot.position.line).toBe(3);
+});
+
+test('robot should move 1 step left when head is left', () => {
+    let maxLineIndex = 3; // 4 lines
+    let maxColumnIndex = 3; // 4 columns
+    let nbOfMoveAlreadyDone = 5;
+    let robot = {
+        position: {
+            line: 2,
+            column: 2
+        },
+        head: 'left'
+    };
+
+    let nbOfMove = featuresToTest.move(robot, maxLineIndex, maxColumnIndex, nbOfMoveAlreadyDone);
+    expect(nbOfMove).toBe(6);
+    expect(robot.position.column).toBe(2);
+    //expect(robot.position.line).toBe(3);
+});
+
 // TODO: write some more tests on move()
 
 test('robot reaches the flag when its position meets `F` on the board', () => {
@@ -188,5 +224,32 @@ test('robot reaches the flag when its position meets `F` on the board', () => {
 
 });
 
-// TODO: write some more tests on checkIfFlagReached
+// TODO: write some more tests on ex3
+
+
+test('when robot moves out of the board, it gives out warning', () => {
+    let maxLineIndex = 3; // 4 lines
+    let maxColumnIndex = 3; // 4 columns
+
+
+    let robot = {
+        position: {
+            line: 0,
+            column: 0
+        },
+    };
+    const treePosition = {
+        position: {
+            line: 0,
+            column: 2
+        },
+        head: 'up'
+    };
+
+
+    /*let treeReached = featuresToTest.treeReached(robot, maxLineIndex, maxColumnIndex, treePosition );
+    expect(robot.position.column).toBe(0);
+    /expect(robot.position.line).toBe(2);*/
+    expect(featuresToTest.treeReached(robot, maxLineIndex, maxColumnIndex, treePosition)).toBe(true);
+});
 
