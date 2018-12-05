@@ -1,5 +1,5 @@
 module.exports =
-    {turn, move, updateBoard, checkIfFlagReached, cloneRobot};
+    {turn, move, updateBoard, checkIfFlagReached, cloneRobot, treeReached, checkIfTreeReached, waterReached, checkIfWaterReached};
 
 const SYMBOLS = {
     robot: setReverse('R'),
@@ -114,7 +114,43 @@ function setBright(char) {
     return `\x1b[1m${char}\x1b[0m`;
 }
 
+function treeReached(robot, maxLineIndex, maxColumnIndex, treePosition) {
+
+    let isTreeReached = false;
+
+    {
+        isTreeReached = true;
+
+    }
+
+    return isTreeReached;
+}
+
+function checkIfTreeReached(robot, board) {
+    const cell = board[robot.position.line][robot.position.column];
+    let treeReached = cell === SYMBOLS.tree || cell == 'T';
+
+    return treeReached;
+}
 
 
+function waterReached(robot, maxLineIndex, maxColumnIndex, waterPosition) {
+
+    let isWaterReached = false;
+
+    {
+        isWaterReached = true;
+
+    }
+
+    return isWaterReached;
+}
+
+function checkIfWaterReached(robot, board) {
+    const cell = board[robot.position.line][robot.position.column];
+    let waterReached = cell === SYMBOLS.water || cell == 'W';
+
+    return waterReached;
+}
 
 
