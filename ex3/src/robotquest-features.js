@@ -1,5 +1,5 @@
 module.exports =
-    {turn, move, updateBoard, checkIfFlagReached, cloneRobot, treeReached, checkIfTreeReached, waterReached, checkIfWaterReached};
+    {turn, move, updateBoard, checkIfFlagReached, cloneRobot, treeReached, checkIfTreeReached, waterReached, checkIfWaterReached, gameOver};
 
 const SYMBOLS = {
     robot: setReverse('R'),
@@ -153,4 +153,16 @@ function checkIfWaterReached(robot, board) {
     return waterReached;
 }
 
+
+//audio sample code
+
+
+
+//game over when robot hits the tree or water
+
+function gameOver() {
+
+
+    clearInterval(game);
+}
 

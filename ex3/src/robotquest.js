@@ -15,14 +15,16 @@ const PLAY_BOARD = [
     [R,   '.',  '.',   W]
 ];
 
+
+//continuous movement going to reach the flag without passing by the tree or water
 //const STEPS_TO_FLAG = ['move', 'turn-right', 'move', 'move', 'move', 'turn-left', 'move', 'move'];
-//const STEPS_TO_FLAG = ['move', 'move', 'turn-right', 'move', 'move', 'turn-left', 'move', 'turn-right',];
+//const STEPS_TO_FLAG = ['move', 'turn-right', 'move', 'move', 'turn-left', 'move', 'move', 'turn-right', 'move', 'turn-right', 'turn-left'];
 
-
-//const STEPS_TO_FLAG = ['move', 'move', 'turn-right', 'turn-right', 'move', 'turn-left', 'move', 'move', 'move', 'turn-left', 'move', 'move'];
-
+//continuous movement from the beginning until robot reaches the flag while it passes the tree and the water
 const STEPS_TO_FLAG = ['move', 'move', 'turn-right', 'turn-right', 'move', 'turn-left', 'move', 'move', 'move', 'turn-right', 'move', 'turn-left', 'turn-left', 'move', 'move', 'move'];
 
+//movement stops when robot hits the tree
+//const STEPS_TO_FLAG = ['move', 'move'];
 
 let ROBOT_START_STATE = {
     position: {
@@ -80,14 +82,17 @@ function renderBoard(board, isTreeReached, isWaterReached, flagReached) {
     }
     if (isTreeReached) {
         console.log(`NOT ALLOWED TO PASS BY IN HERE!!! GO BACK!!!`);
+        console.log('GAME OVER!');
     }
 
     if (isWaterReached) {
         console.log(`PASSING BY HERE IS PROHIBITED!!! GO BACK!!!`);
+        console.log('GAME OVER!');
     }
 
     if (flagReached) {
         console.log(`Bravo! Flag reached in ${moves} moves and ${turns} turns`);
+        console.log('YOU WIN!');
     }
 
     sleep(2000);
@@ -110,9 +115,6 @@ function sleep(delay) {
     let start = new Date().getTime();
     while (new Date().getTime() < start + delay) { /* Do nothing while waiting */}
 }
-
-//audio sample code
-
 
 
 /*

@@ -25,7 +25,7 @@ test('robot reaches the tree when its position meets T, then it gives out warnin
     expect(isTreeReached).toBe(true);
 });
 
-//hackathon: add more features on ex2 - write test when robot reaches water.
+//hackathon: add more features on ex3 - write test when robot reaches water.
 
 test('robot reaches the water when its position meets W, then it gives out warning/message', () => {
     let maxLineIndex = 3; // 4 lines
