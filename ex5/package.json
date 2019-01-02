@@ -1,0 +1,19 @@
+{
+  "name": "robotquest-web",
+  "version": "2.0.0",
+  "description": "",
+  "main": "robotquest-web.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "npm": "^6.4.1",
+    "http-server": "^0.11.1"
+  },
+  "devDependencies": {
+    "jest": "^23.6.0"
+  }
+}
