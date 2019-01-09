@@ -8,22 +8,26 @@
     <link rel="stylesheet" href="style.css">
     <title>Robotquest</title>
 
-    <script type="text/javascript">
-        function move_robot(){
-            var mr = document.getElementById("clickMe");
+    <script>
 
-            alert("The robot should move to a specific direction!");
+        function move_robot(robot){
+
+            alert("Nothing happens! " +
+                "The robot should move to a specific direction!");
         }
 
-        function turn_left(){
-            var tl = document.getElementById("clickMe");
-            alert("The robot should turn left!");
+        function turn_left(robot){
+
+            alert("Nothing happens! " +
+                "The robot should turn left!");
         }
 
-        function turn_right(){
-            var tr = document.getElementById("clickMe");
-            alert("The robot should turn right!");
+        function turn_right(robot){
+
+            alert("Nothing happens! " +
+                "The robot should turn right!");
         }
+
 
     </script>
 </head>
@@ -34,66 +38,66 @@
 
 <form>
     <form>
-        <div id="root">
+        <!-- <div id="root"> -->
 
         <div id="toolbar" class="toolbar">
 
         <!-- the robot's head direction is up at the starting point, so to begin the
         head must turn to right before it will move to any direction -->
 
-        <!--<input type="button" onclick="alert('')" value=""> -->
 
         <button id="turn-right-button" onclick="turn_right()">TURN-RIGHT</button>
         <button id="move-button" onclick="move_robot()">MOVE</button>
         <button id="turn-left-button" onclick="turn_left()">TURN-LEFT</button>
+
         </div>
     </form>
 
-    <div id="board" class="board">
 
         <div id="clickMe" class="clickMe">
 
             <table style="width: 50%">
                 <tr>
-                    <td>T</td>
-                    <td>T</td>
-                    <td></td>
-                    <td>F</td>
+                    <td id="l3c0">T</td>
+                    <td id="l3c1">T</td>
+                    <td id="l3c2"></td>
+                    <td id="l3c3">F</td>
                 </tr>
 
                 <tr>
-                    <td>T</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td id="l2c0">T</td>
+                    <td id="l2c1"></td>
+                    <td id="l2c2"></td>
+                    <td id="l2c3"></td>
                 </tr>
 
                 <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td id="l1c0"></td>
+                    <td id="l1c1"></td>
+                    <td id="l1c2"></td>
+                    <td id="l1c3"></td>
                 </tr>
 
                 <tr>
-                    <td>R↑</td>
-                    <td></td>
-                    <td></td>
-                    <td>W</td>
+                    <td id="l0c0">R↑</td>
+                    <td id="l0c1"></td>
+                    <td id="l0c2"></td>
+                    <td id="l0c3">W</td>
                 </tr>
 
 
             </table>
         </div>
-        </div>
+        <!-- </div> -->
 
-    </div>
+    <!-- </div> -->
 
 
 
 </form>
 
 </center>
+
 </body>
 
 </html>

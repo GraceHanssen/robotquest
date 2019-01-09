@@ -41,3 +41,7 @@ button {
     background-color: springgreen;
     color: black;
 }
+
+button:active .move_robot {
+    transform: scale(0.99);
+}
